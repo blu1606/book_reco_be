@@ -1,6 +1,6 @@
 {
-  "install": "mvn install -DskipTests",
-  "start": "mvn spring-boot:run",
+  "install": "./mvnw clean install -DskipTests",
+  "start": "./mvnw spring-boot:run",
   "watch": {
     "install": {
       "include": [
