@@ -8,7 +8,7 @@
    - `glitch.json`
    - `package.json`
    - `.gitignore`
-   - `pom.xml` (đã cập nhật với maven-compiler-plugin 3.8.1)
+   - `pom.xml` (đã cập nhật với Java 11 và maven-compiler-plugin 3.8.1)
    - `src/main/resources/application.properties` (đã cập nhật)
 
 ### Bước 2: Tạo Glitch Project
@@ -101,31 +101,36 @@ curl https://your-project-name.glitch.me/api/models
 
 ### Lỗi thường gặp:
 
-1. **Maven Version Error**:
+1. **Maven Compiler Error**:
+   - Lỗi: "invalid flag: --release"
+   - Giải pháp: Đã cập nhật `pom.xml` với Java 11 và maven-compiler-plugin 3.8.1
+   - Đã chuyển đổi Java records thành classes thông thường
+
+2. **Maven Version Error**:
    - Lỗi: "requires Maven version 3.6.3"
    - Giải pháp: Đã cập nhật `pom.xml` với maven-compiler-plugin 3.8.1
    - Sử dụng Maven wrapper: `./mvnw` thay vì `mvn`
 
-2. **CORS Error**:
+3. **CORS Error**:
    - Kiểm tra `ALLOWED_ORIGINS` trong Glitch `.env`
    - Đảm bảo URL frontend chính xác
    - Restart Glitch project sau khi thay đổi
 
-3. **Build Error**:
+4. **Build Error**:
    - Kiểm tra `pom.xml` dependencies
-   - Kiểm tra Java version compatibility (Java 17)
+   - Kiểm tra Java version compatibility (Java 11)
    - Xem logs trong Glitch console
 
-4. **API Connection Error**:
+5. **API Connection Error**:
    - Kiểm tra `NEXT_PUBLIC_API_BASE_URL` trong Vercel
    - Đảm bảo backend URL đúng
    - Test backend endpoints trực tiếp
 
-5. **Glitch Sleep**:
+6. **Glitch Sleep**:
    - Glitch có thể sleep sau 5 phút không hoạt động
    - Có thể cần wake up bằng cách truy cập URL
 
-6. **Maven Wrapper Permission**:
+7. **Maven Wrapper Permission**:
    - Nếu gặp lỗi permission với `./mvnw`
    - Chạy: `chmod +x mvnw` trong Glitch terminal
 

@@ -77,7 +77,7 @@ public class GeminiModelController {
             
             if (response.getBody() != null) {
                 log.info("Successfully fetched models from Gemini API");
-                return ResponseEntity.ok(response.getBody().data());
+                return ResponseEntity.ok(response.getBody().getData());
             } else {
                 log.warn("No response body from Gemini API models endpoint");
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
