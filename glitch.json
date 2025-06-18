@@ -1,0 +1,17 @@
+{
+  "install": "mvn install -DskipTests",
+  "start": "mvn spring-boot:run",
+  "watch": {
+    "install": {
+      "include": [
+        "\\.jar$"
+      ]
+    },
+    "restart": {
+      "include": [
+        "\\.java$"
+      ]
+    },
+    "throttle": 1000
+  }
+} 

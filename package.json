@@ -1,0 +1,16 @@
+{
+  "name": "hello-flash-backend",
+  "version": "1.0.0",
+  "description": "Spring Boot Backend for AI Book Recommendations",
+  "main": "index.js",
+  "scripts": {
+    "start": "mvn spring-boot:run",
+    "install": "mvn install -DskipTests"
+  },
+  "keywords": ["spring-boot", "java", "ai", "book-recommendations"],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  }
+} 
